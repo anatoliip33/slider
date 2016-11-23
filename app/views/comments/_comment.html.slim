@@ -1,0 +1,7 @@
+strong
+  = comment.name
+div
+  = comment.content
+div
+  | Posted on
+  =<l comment.created_at, format: :human

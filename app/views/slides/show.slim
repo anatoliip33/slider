@@ -1,0 +1,47 @@
+p#notice= notice
+p
+  strong Slide name:
+  =< @slide.name
+p
+  strong Slide date:
+  =<l @slide.created_at, format: :human
+
+p
+  strong Photos
+.container
+  #slides
+    - @slide.photos.each do |photo|
+      = image_tag photo.image.url
+    a.slidesjs-previous.slidesjs-navigation href="#"
+      i.icon-chevron-left.icon-large
+    a.slidesjs-next.slidesjs-navigation href="#"
+      i.icon-chevron-right.icon-large
+#comments
+  = render @slide.comments.order(created_at: :desc)
+#new
+  = simple_form_for [@slide, Comment.new], remote: true do |f|
+    = f.error_notification
+    h2.space Your Comment
+    .form-inputs
+      = f.input :name, label: false
+      = f.input :content, label: false, input_html: { rows: 6 }
+
+    .form-actions
+      = f.button :submit, "Post Your Comment", class: "btn btn-primary"
+
+
+br
+= link_to 'Edit', edit_slide_path(@slide)
+br
+= link_to 'Destroy', @slide, method: :delete
+br
+= link_to 'Back', slides_path
+
+javascript:
+  $(function(){
+    $("#slides").slidesjs({
+      width: 940,
+      height: 528,
+      navigation: false
+    });
+  });

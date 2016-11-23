@@ -1,0 +1,6 @@
+= simple_form_for @slide do |f|
+  = f.input :name, label: 'Name'
+  = f.simple_fields_for :photos, Photo.new do |p|
+    = p.file_field :image, multiple: true, name: "slide[photos_attributes][][image]"
+  br
+  = f.button :submit
