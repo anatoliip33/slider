@@ -15,14 +15,21 @@ p
       - @slide.photos.each.with_index(1) do |photo, index|
         = image_tag photo.image.url, class: "preview_image#{index}"
 
-.arrows
-  a.previous href="#" &lt;
-  a.next href="#" &gt;
+    .arrows
+      a.previous href="#" &lt;
+      a.next href="#" &gt;
 
-h3 Comments
+  .bullets
+    - i = 1
+    - while (i < (@slide.photos.count+1))
+      a class="gallery_bullet#{i}" href="javascript: change_slide(#{i})"
+        span Bullet
+      - i = i + 1
 
-#comments
-  = render @slide.comments.order(created_at: :desc)
+.all_comments
+  h3 Comments
+  #comments
+    = render @slide.comments.order(created_at: :desc)
 
 #new
   = simple_form_for [@slide, Comment.new], remote: true do |f|

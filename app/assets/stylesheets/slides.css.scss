@@ -1,4 +1,3 @@
-a,
 .container {
   margin: 40px auto;
 }
@@ -28,40 +27,46 @@ img.preview_image1 {
   color: #FFF;
   text-decoration: none;
   border-radius: 100px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
   position: absolute;
-  left: 300px;
-  /*top: 50%;*/
-  margin-top: -15px;
+  left: -100px;
+  top: 50%;
 }
 
 a.next {
-  right: 20px;
+  right: -100px;
   left: auto;
 }
 
 .arrows a:hover {
   background: #000;
-  /*margin-top: -40px;*/
 }
 
-/*.galleryNavigationBullets {
-  text-align: center;
+.bullets {
+  text-align: right;
   margin-top: 20px;
   margin-bottom: 60px;
 }
-.galleryNavigationBullets span {
+.bullets span {
   display: none;
 }
-.galleryNavigationBullets a {
+.bullets a {
   width: 20px;
   height: 20px;
   display: inline-block;
   margin-right: 5px;
   background: #ddd;
 }
-.galleryNavigationBullets a:hover,
-.galleryNavigationBullets a.active {
+.bullets a:hover,
+.bullets a.active {
   background: #555;
-}*/
+}
+
+.all_comments{
+  padding-top: 50px;
+}
+
+#comments {
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
