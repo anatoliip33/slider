@@ -4,12 +4,15 @@ $(function() {
       slides_length = $slides.length;
       current_slide = 1;
       slide_width = $slides.width();
-      // slide_height = $slide.height();
+      slide_height = $slides.height();
       // slide_length = $slide.length;
       // total_width = slide_length * slide_width;
   $('.container').css({
     width: function() {
       return slide_width;
+    },
+    height: function() {
+      return slide_height;
     }
   });
 
