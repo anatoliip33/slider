@@ -8,10 +8,15 @@ p
 
 p
   strong Photos
+
 .container
   #slides
     - @slide.photos.each do |photo|
       = image_tag photo.image.url
+
+  .arrows
+    a.previous href="#" "&lt;"
+    a.next href="#" "&gt;"
 
 
 #comments
