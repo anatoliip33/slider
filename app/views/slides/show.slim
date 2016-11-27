@@ -29,7 +29,8 @@ p
 .all_comments
   h3 Comments
   #comments
-    = render @slide.comments.order(created_at: :desc)
+    #comments-content
+      = render @slide.comments.order(created_at: :desc)
 
 #new
   = simple_form_for [@slide, Comment.new], remote: true do |f|
