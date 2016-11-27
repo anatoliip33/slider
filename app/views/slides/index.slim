@@ -2,13 +2,14 @@ p#notice= notice
 
 h1 Listing Slides
 
-- @slides.each do |slide|
-  div
-    strong Slide title:
-    =< slide.name
-  div
-    - unless slide.photos.blank?
-      = link_to slide do
-        = image_tag slide.photos.first.image.url
-br
-  = link_to 'New Slide', new_slide_path
+.content
+  - @slides.each do |slide|
+    div
+      strong Slide title:
+      =< slide.name
+    div
+      - unless slide.photos.blank?
+        = link_to slide do
+          = image_tag slide.photos.first.image.url
+  br
+    = link_to 'New Slide', new_slide_path
