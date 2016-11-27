@@ -61,12 +61,13 @@ a.next {
   background: #555;
 }
 
-.all_comments{
-  padding-top: 50px;
-}
-
 #comments {
   height: 250px;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.delete_link {
+  display: inline-block;
+  margin-left: 10px;
 }

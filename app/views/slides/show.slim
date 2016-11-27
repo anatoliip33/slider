@@ -25,6 +25,12 @@ p
       a class="gallery_bullet#{i}" href="javascript: change_slide(#{i})"
         span Bullet
       - i = i + 1
+br
+= link_to 'Edit', edit_slide_path(@slide)
+.delete_link
+  =<> link_to 'Destroy', @slide, method: :delete
+br
+= link_to 'Back', slides_path
 
 .all_comments
   h3 Comments
@@ -42,11 +48,3 @@ p
 
     .form-actions
       = f.button :submit, "Post Your Comment", class: "btn btn-primary"
-
-
-br
-= link_to 'Edit', edit_slide_path(@slide)
-br
-= link_to 'Destroy', @slide, method: :delete
-br
-= link_to 'Back', slides_path
