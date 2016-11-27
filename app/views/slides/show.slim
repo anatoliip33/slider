@@ -12,12 +12,11 @@ p
   #slides
     - @slide.photos.each do |photo|
       = image_tag photo.image.url
-    a.slidesjs-previous.slidesjs-navigation href="#"
-      i.icon-chevron-left.icon-large
-    a.slidesjs-next.slidesjs-navigation href="#"
-      i.icon-chevron-right.icon-large
+
+
 #comments
   = render @slide.comments.order(created_at: :desc)
+
 #new
   = simple_form_for [@slide, Comment.new], remote: true do |f|
     = f.error_notification
@@ -36,12 +35,3 @@ br
 = link_to 'Destroy', @slide, method: :delete
 br
 = link_to 'Back', slides_path
-
-javascript:
-  $(function(){
-    $("#slides").slidesjs({
-      width: 940,
-      height: 528,
-      navigation: false
-    });
-  });
